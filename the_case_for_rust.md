@@ -54,3 +54,7 @@ Lots of software is already written in Java and it still works so we teach engin
 One of the reasons the JVM still exists because some operating systems (looking at you Windows) can't get on board a standard like POSIX.
 Standards are fantastic if used at the correct level. For example, at the hardware level, graphics driver standards like OpenGL give the programmer a uniform API to use so no matter what GPU they program for, if it implements the standard (which most do) then the program will work.  But of course Microsoft (and Apple) think they are holy and have their own standard DirectX/Metal which means GPU manufacturers have to write drivers for this standard too.
 This cross platform support that the VM provides is good on paper as it gives the programmer a virtual standard to program against but in reality each platform will do something different anyway which can be a pain for the developer to work around.
+
+## References
+- https://insights.stackoverflow.com/survey/2019#most-loved-dreaded-and-wanted
+- https://www.rust-lang.org/
