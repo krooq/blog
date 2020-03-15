@@ -17,10 +17,10 @@ We think of these languages as being more advanced, an evolution from the clunky
 For the past few weeks I have been learning Rust, a modern multipurpose, low level language. Rust is brimming with modern features inspired from higher level languages. However Rust's killer feature combo is it's C-level performance and compiler enforced memory safety.
 As of 2019, the Stack Overflow developer survey shows Rust as the most loved programming language for the 4th year in a row, meaning the people using Rust don't want to stop using Rust.
 I find this quite interesting for a few reasons.
-    1. Rust has a steep learning curve.  The low level memory safety introduces a new concept to programmers where one must be quite explicit about the lifetime of each variable. It's a feature unique to Rust and is quite diffuclt to get used to if one comes from a higher level language.
-    2. The next languages on the most loved list are Python then TypeScript. I feel like these languages are here because they serve a unique niche and they serve it well. 
-    Python is excellent for numerical analysis and has first class libraries for machine learning.  The simplicity is also very alluring to new developers.
-    TypeScript on the otherhand is the type safety that web developers have been begging for since web applications started to become fully fledged complex programs.
+1. Rust has a steep learning curve.  The low level memory safety introduces a new concept to programmers where one must be quite explicit about the lifetime of each variable. It's a feature unique to Rust and is quite diffuclt to get used to if one comes from a higher level language.
+2. The next languages on the most loved list are Python then TypeScript. I feel like these languages are here because they serve a unique niche and they serve it well. 
+Python is excellent for numerical analysis and has first class libraries for machine learning.  The simplicity is also very alluring to new developers.
+TypeScript on the otherhand is the type safety that web developers have been begging for since web applications started to become fully fledged complex programs.
 
 ## Some of them do... most of them do not.
 
