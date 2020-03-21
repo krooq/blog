@@ -15,10 +15,10 @@ A `Package` is a collection of `Crate`s that forms a set of functionality and it
 
 #### Crate
 A `Crate` is a logical collection of `Module`s that forms either a library or compiles to a binary.
-- A `library Crate` is formed with the presence of a src/lib.rs file.
+- A `library Crate` is formed implicitly with the presence of a src/lib.rs file.
 - A `binary Crate` is formed either 
   - implicitly with the prescence of a src/main.rs file 
-  - explicitly by src/bin/<file>.rs files and a declaration in the `Package` Cargo.toml.
+  - explicitly by src/bin/\<file\>.rs files and a declaration in the `Package` Cargo.toml.
 
 
 #### Module
