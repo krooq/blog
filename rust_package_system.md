@@ -50,7 +50,7 @@ pub fn fn_a(){
 use crate::module_a::fn_a; // I needed to use the 'crate' prefix here to find module_a
 
 pub fn fn_b(){
-  fn_a(); // yahoo I can call fn_a from module_b
+  fn_a(); // yahoo I can access fn_a in module_b
 }
 ```
 ```
