@@ -21,7 +21,8 @@ A *crate* is a logical collection (a tree actually) of *modules* that forms eith
 - A *binary crate* is formed either 
   - implicitly with the prescence of a src/main.rs file 
   - explicitly by src/bin/file-name.rs files and a declaration in the *package* Cargo.toml.
-These files are called the *crate root*.
+
+These files are known as the *crate root*.
 
 ### Module
 A *module* is a compilation unit and a namespace.
