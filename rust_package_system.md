@@ -21,7 +21,7 @@ A *crate* is a logical collection (a tree actually) of *modules* that forms eith
 - A *binary crate* is formed either 
   - implicitly with the prescence of a src/main.rs file 
   - explicitly by src/bin/file-name.rs files and a declaration in the *package* Cargo.toml.
-
+These files are called the *crate root*.
 
 ### Module
 A *module* is a compilation unit and a namespace.
@@ -30,7 +30,7 @@ A *module* is a compilation unit and a namespace.
   - explicitly as a block e.g. `mod { //... }`
   - implicitly as its own file
 
-You can add a *module* to a *crate* by writing `mod module-name;` (i.e. the filename without '.rs' extension) in a the root of a *crate* e.g. the src/main.rs file or src/lib.rs file. This will let rustc know to compile the *module* when compiling the *crate*;
+You can add a *module* to a *crate* by writing `mod module-name;` (i.e. the filename without '.rs' extension) in a *crate root*. This will let rustc know to compile the *module* when compiling the *crate*;
 
 You can bring some of a *module* into a scope with `use` and the `::` syntax.
 To disinguish your *modules* from other *modules* you need to use the `crate` keyword.  You will also need to use the `pub` on anything in your *module* that you want accessible from other *modules*
