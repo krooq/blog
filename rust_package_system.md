@@ -35,7 +35,8 @@ You can add a *module* to a *crate* by writing `mod module-name;` (i.e. the file
 
 You can bring some of a *module* into a scope with `use` and the `::` syntax.
 To disinguish your *modules* from other *modules* you need to use the `crate` keyword.  You will also need to use the `pub` on anything in your *module* that you want accessible from other *modules*
-e.g.
+
+##### Example
 ```
 // module_a.rs
 
