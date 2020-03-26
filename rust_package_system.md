@@ -27,42 +27,68 @@ These files are known as the *crate root*.
 ### Module
 A *module* is a compilation unit and a namespace.
 
-- You can declare a *module* either
+- You can define a *module* either
   - explicitly as a block e.g. `mod { //... }`
   - implicitly as its own file
 
-You can add a *module* to a *crate* by writing `mod module-name;` (i.e. the filename without '.rs' extension) in a *crate root*. This will let rustc know to compile the *module* when compiling the *crate*;
+You can declare a *module* to be part of a *crate* by writing `mod module-name;` (i.e. the filename without '.rs' extension) in a *mod.rs* file or a *crate root* in the same folder as the *module*. This lets rustc know to compile the *module* when compiling the *crate*.
+Each *module* can only be declared once in a *crate*.
 
-You can bring some of a *module* into a scope with `use` and the `::` syntax.
-To disinguish your *modules* from other *modules* you need to use the `crate` keyword.  You will also need to use the `pub` on anything in your *module* that you want accessible from other *modules*
+You can bring some a *module* into a scope with `use` and the `::` syntax. You will also need to use the `crate` and `super` keywords to select internal *modules* in preference to external *modules*.
+
+- To access your *module* **inside** the *module* it is declared in you must
+  - declare as `mod module-name;`
+  - bring into scope with `use super::my_module::*;`
+- To access your *module* **outside** the *module* it is declared in you must
+  - declare as `pub mod module-name;`
+  - bring into scope with `use crate::my_module::*;`
 
 ##### Example
 ```
-// module_a.rs
+app
+|
+|- a
+|  |- a1.rs
+|  |- a2.rs
+|  |- mod.rs // contains 'pub mod a1;' and 'mod a2;'
+|- b
+|  |- b1.rs
+|  |- mod.rs // contains 'pub mod b1;'
+|  
+|- main.rs
+```
 
-pub fn fn_a(){
+```
+// a1.rs
+pub fn fn_a1(){
   // ...
 }
 ```
 ```
-// module_b.rs
+// a2.rs
+use super::a1::fn_a1; // Must use the 'super' prefix
 
-use crate::module_a::fn_a; // I needed to use the 'crate' prefix here to find module_a
+pub fn fn_a2(){
+  fn_a1(); // yahoo I can access fn_a1 in a2.rs
+}
+```
+```
+// b.rs
+use crate::a::a1::fn_a1; // Must use the 'crate' prefix
 
-pub fn fn_b(){
-  fn_a(); // yahoo I can access fn_a in module_b
+pub fn fn_b1(){
+  fn_a1(); // yahoo I can access fn_a1 in b1.rs
 }
 ```
 ```
 // src/main.rs
-
-mod module_a;
-mod module_b;
-use module_a::fn_a; // no need to use the 'crate' prefix in the crate root
+mod a;
+mod b;
+use a::a1::fn_a1; // no need to use the 'crate' prefix in the crate root
 
 fn main() {
-  fn_a();
-  module_b::fn_b(); // I can also inline module prefixes
+  fn_a1();
+  b::b1::fn_b1(); // I can also inline module prefixes
 }
 ```
 
