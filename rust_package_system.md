@@ -45,7 +45,7 @@ You can bring some a *module* into a scope with `use` and the `::` syntax. You w
 
 ##### Example
 ```
-app
+src
 |
 |- a
 |  |- a1.rs
@@ -57,15 +57,14 @@ app
 |  
 |- main.rs
 ```
-
 ```
-// a1.rs
+// src/a/a1.rs
 pub fn fn_a1(){
   // ...
 }
 ```
 ```
-// a2.rs
+// src/a/a2.rs
 use super::a1::fn_a1; // Must use the 'super' prefix
 
 pub fn fn_a2(){
@@ -73,7 +72,7 @@ pub fn fn_a2(){
 }
 ```
 ```
-// b.rs
+// src/b/b.rs
 use crate::a::a1::fn_a1; // Must use the 'crate' prefix
 
 pub fn fn_b1(){
