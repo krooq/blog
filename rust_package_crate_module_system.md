@@ -8,7 +8,7 @@ If so this might be the right tutorial for you.
 
 *Note: Pre 2018 editions of Rust work slightly different, [see [1] if you come from pre 2018 Rust](https://doc.rust-lang.org/edition-guide/rust-2018/module-system/path-clarity.html).*
 
-![alt text](../images/cargo.png)
+![alt text](images/cargo.png)
 
 In Rust the package/crate/module system is similar to a traditional file system.
 There are 3 main concepts...
