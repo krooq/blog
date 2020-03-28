@@ -1,5 +1,5 @@
 # The case for Rust
-##### 15th March 2020
+##### Mar. 15, 2020 &middot; Gavin Rossiter
 
 ## Introduction
 Have you ever tried learning a lower level programming language after working almost exclusively with a modern high level languages like Python/Ruby, Javascript or even Java/C#?
